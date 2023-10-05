@@ -34,6 +34,21 @@ export default function ExcluirProdutos() {
       .catch((error) => console.error(error));
   }, [id]);
 
+  const handleDelete = (event) => {
+    event.preventDefault();
+
+    if (!prod) {
+      console.error("Produto não encontrado");
+      return;
+    }
+
+    fetch(`http://localhost:5000/produtos/${prod.id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+
   return (
     <>
       <div>
