@@ -28,7 +28,7 @@ export default function Produtos() {
 
   return (
     <div>
-      <h1>Produtos de INFORMÁTICA - FIPAPI</h1>
+      <h1>Produtos de INFORMÁTICA</h1>
       <p>Os Melhores Produtos do Mercado</p>
 
       {open ? <ModalInserir open={open} setOpen={setOpen}/> : ""}
