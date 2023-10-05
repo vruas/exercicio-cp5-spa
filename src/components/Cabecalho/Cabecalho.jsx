@@ -10,6 +10,8 @@ export default function Cabecalho(props) {
   return (
     <>
       <header className="cabecalho">
+        <h1>Exercício 3 - CP5</h1>
+        <h2>Coded by vetoor</h2>
         <ul>
           <li>
             <Link to="/">Home</Link>
