@@ -14,6 +14,25 @@ export default function ExcluirProdutos() {
   const [listaProdutoExterno, setListaProdutoExterno] = useState([]);
   const [prod, setProd] = useState(null);
 
+  useEffect(() => {
+    fetch(`http://localhost:5000/produtos/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Produto não encontrado");
+        }
+      })
+      .then((data) => {
+        setProd(data);
+      })
+      .catch((error) => console.error(error));
+  }, [id]);
 
   return (
     <>
